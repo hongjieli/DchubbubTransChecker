@@ -35,7 +35,6 @@ public class DmifTransCheckerUI extends javax.swing.JFrame {
         this.jDataSetSoC = new DataSet();
         this.bIPOpened = false;
         this.bSoCOpened = false;
-        System.out.println("hello, we are working online");
     }
 
     /**
