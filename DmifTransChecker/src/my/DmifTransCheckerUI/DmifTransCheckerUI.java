@@ -80,9 +80,9 @@ public class DmifTransCheckerUI extends javax.swing.JFrame {
 
         jLabel2.setText("Analyze script of IP");
 
-        jTextField1.setText("/home/honli/perl/dmif_soc_monitor_analyzer/dce11_2_quick_pipe");
+        jTextField1.setText("/home/honli/perl/dmif_soc_monitor_analyzer/stoney_tewang_mc_stress/ip");
 
-        jTextField2.setText("/home/honli/perl/dmif_soc_monitor_analyzer/dce11_2_quick_pipe");
+        jTextField2.setText("/home/honli/perl/dmif_soc_monitor_analyzer/stoney_tewang_mc_stress/ip");
 
         jButton3.setText("GO");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -157,9 +157,9 @@ public class DmifTransCheckerUI extends javax.swing.JFrame {
 
         jLabel4.setText("Analyze script of SoC");
 
-        jTextField3.setText("/home/honli/perl/dmif_soc_monitor_analyzer/elle_quick_pipe");
+        jTextField3.setText("/home/honli/perl/dmif_soc_monitor_analyzer/stoney_tewang_mc_stress/soc");
 
-        jTextField4.setText("/home/honli/perl/dmif_soc_monitor_analyzer/elle_quick_pipe");
+        jTextField4.setText("/home/honli/perl/dmif_soc_monitor_analyzer/stoney_tewang_mc_stress/soc");
         jTextField4.setToolTipText("");
 
         jButton4.setText("GO");
@@ -240,7 +240,7 @@ public class DmifTransCheckerUI extends javax.swing.JFrame {
         ));
         jScrollPane4.setViewportView(jTable4);
 
-        jButton1.setText("jButton1");
+        jButton1.setText("Compare");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);

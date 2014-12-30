@@ -117,12 +117,12 @@
             </Component>
             <Component class="javax.swing.JTextField" name="jTextField1">
               <Properties>
-                <Property name="text" type="java.lang.String" value="/home/honli/perl/dmif_soc_monitor_analyzer/dce11_2_quick_pipe"/>
+                <Property name="text" type="java.lang.String" value="/home/honli/perl/dmif_soc_monitor_analyzer/stoney_tewang_mc_stress/ip"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="jTextField2">
               <Properties>
-                <Property name="text" type="java.lang.String" value="/home/honli/perl/dmif_soc_monitor_analyzer/dce11_2_quick_pipe"/>
+                <Property name="text" type="java.lang.String" value="/home/honli/perl/dmif_soc_monitor_analyzer/stoney_tewang_mc_stress/ip"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JButton" name="jButton3">
@@ -240,12 +240,12 @@
             </Component>
             <Component class="javax.swing.JTextField" name="jTextField3">
               <Properties>
-                <Property name="text" type="java.lang.String" value="/home/honli/perl/dmif_soc_monitor_analyzer/elle_quick_pipe"/>
+                <Property name="text" type="java.lang.String" value="/home/honli/perl/dmif_soc_monitor_analyzer/stoney_tewang_mc_stress/soc"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="jTextField4">
               <Properties>
-                <Property name="text" type="java.lang.String" value="/home/honli/perl/dmif_soc_monitor_analyzer/elle_quick_pipe"/>
+                <Property name="text" type="java.lang.String" value="/home/honli/perl/dmif_soc_monitor_analyzer/stoney_tewang_mc_stress/soc"/>
                 <Property name="toolTipText" type="java.lang.String" value=""/>
               </Properties>
             </Component>
@@ -368,7 +368,7 @@
             </Container>
             <Component class="javax.swing.JButton" name="jButton1">
               <Properties>
-                <Property name="text" type="java.lang.String" value="jButton1"/>
+                <Property name="text" type="java.lang.String" value="Compare"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
