@@ -35,6 +35,11 @@ public class DmifTransCheckerUI extends javax.swing.JFrame {
         this.jDataSetSoC = new DataSet();
         this.bIPOpened = false;
         this.bSoCOpened = false;
+        this.vIPDataSet  = new Vector();
+        this.vSoCDataSet = new Vector();
+        
+        this.selectedSoCIndex = -1;
+        this.selectedIPIndex = -1;
     }
 
     /**
@@ -46,53 +51,53 @@ public class DmifTransCheckerUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTabbedPane1 = new javax.swing.JTabbedPane();
-        jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jButton3 = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jButton4 = new javax.swing.JButton();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
-        jPanel3 = new javax.swing.JPanel();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        jTable3 = new javax.swing.JTable();
-        jScrollPane4 = new javax.swing.JScrollPane();
-        jTable4 = new javax.swing.JTable();
-        jButton1 = new javax.swing.JButton();
+        jTabbedPaneIP = new javax.swing.JTabbedPane();
+        jPanelIP = new javax.swing.JPanel();
+        jLabelOutDirIP = new javax.swing.JLabel();
+        jLabelScriptIP = new javax.swing.JLabel();
+        jTextFieldOutDirIP = new javax.swing.JTextField();
+        jTextFieldScriptIP = new javax.swing.JTextField();
+        StartIPAnalyze = new javax.swing.JButton();
+        jScrollPaneIP = new javax.swing.JScrollPane();
+        jTableIP = new javax.swing.JTable();
+        jPanelSoC = new javax.swing.JPanel();
+        jLabelOutDirSoC = new javax.swing.JLabel();
+        jLabelScriptSoC = new javax.swing.JLabel();
+        jTextFieldOutDirSoC = new javax.swing.JTextField();
+        jTextFieldScriptSoC = new javax.swing.JTextField();
+        StartSoCAnalyze = new javax.swing.JButton();
+        jScrollPaneSoC = new javax.swing.JScrollPane();
+        jTableSoC = new javax.swing.JTable();
+        jPanelCompare = new javax.swing.JPanel();
+        jScrollPaneCompareSoC = new javax.swing.JScrollPane();
+        jTableCompareSoC = new javax.swing.JTable();
+        jScrollPaneCompareIP = new javax.swing.JScrollPane();
+        jTableCompareIP = new javax.swing.JTable();
+        StartIPSoCCompare = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("DmifTransChecker");
         setPreferredSize(new java.awt.Dimension(1270, 800));
 
-        jTabbedPane1.setPreferredSize(new java.awt.Dimension(1280, 800));
+        jTabbedPaneIP.setPreferredSize(new java.awt.Dimension(1280, 800));
 
-        jLabel1.setText("Output directory of IP");
+        jLabelOutDirIP.setText("Output directory of IP");
 
-        jLabel2.setText("Analyze script of IP");
+        jLabelScriptIP.setText("Analyze script of IP");
 
-        jTextField1.setText("/home/honli/perl/dmif_soc_monitor_analyzer/stoney_tewang_mc_stress/ip");
+        jTextFieldOutDirIP.setText("/home/honli/perl/dmif_soc_monitor_analyzer/stoney_tewang_mc_stress/ip");
 
-        jTextField2.setText("/home/honli/perl/dmif_soc_monitor_analyzer/stoney_tewang_mc_stress/ip");
+        jTextFieldScriptIP.setText("/home/honli/perl/dmif_soc_monitor_analyzer/stoney_tewang_mc_stress/ip");
 
-        jButton3.setText("GO");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        StartIPAnalyze.setText("GO");
+        StartIPAnalyze.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                StartIPAnalyzeActionPerformed(evt);
             }
         });
 
-        jTable1.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 13)); // NOI18N
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        jTableIP.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 13)); // NOI18N
+        jTableIP.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -100,76 +105,76 @@ public class DmifTransCheckerUI extends javax.swing.JFrame {
 
             }
         ));
-        jTable1.setToolTipText("");
-        jTable1.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_ALL_COLUMNS);
-        jTable1.setOpaque(false);
-        jTable1.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
+        jTableIP.setToolTipText("");
+        jTableIP.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_ALL_COLUMNS);
+        jTableIP.setOpaque(false);
+        jTableIP.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        jTableIP.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jTable1MouseClicked(evt);
+                jTableIPMouseClicked(evt);
             }
         });
-        jScrollPane1.setViewportView(jTable1);
-        jTable1.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        jScrollPaneIP.setViewportView(jTableIP);
+        jTableIP.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout jPanelIPLayout = new javax.swing.GroupLayout(jPanelIP);
+        jPanelIP.setLayout(jPanelIPLayout);
+        jPanelIPLayout.setHorizontalGroup(
+            jPanelIPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelIPLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jButton3)
+                .addGroup(jPanelIPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanelIPLayout.createSequentialGroup()
+                        .addComponent(StartIPAnalyze)
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel2))
+                    .addGroup(jPanelIPLayout.createSequentialGroup()
+                        .addGroup(jPanelIPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabelOutDirIP)
+                            .addComponent(jLabelScriptIP))
                         .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 1085, Short.MAX_VALUE)
-                            .addComponent(jTextField2)))
-                    .addComponent(jScrollPane1))
+                        .addGroup(jPanelIPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTextFieldOutDirIP, javax.swing.GroupLayout.DEFAULT_SIZE, 1085, Short.MAX_VALUE)
+                            .addComponent(jTextFieldScriptIP)))
+                    .addComponent(jScrollPaneIP))
                 .addContainerGap())
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        jPanelIPLayout.setVerticalGroup(
+            jPanelIPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelIPLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanelIPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelOutDirIP)
+                    .addComponent(jTextFieldOutDirIP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(17, 17, 17)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanelIPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelScriptIP)
+                    .addComponent(jTextFieldScriptIP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton3)
+                .addComponent(StartIPAnalyze)
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 429, Short.MAX_VALUE)
+                .addComponent(jScrollPaneIP, javax.swing.GroupLayout.DEFAULT_SIZE, 429, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        jTabbedPane1.addTab("IP", jPanel1);
+        jTabbedPaneIP.addTab("IP", jPanelIP);
 
-        jLabel3.setText("Output directory of SoC");
+        jLabelOutDirSoC.setText("Output directory of SoC");
 
-        jLabel4.setText("Analyze script of SoC");
+        jLabelScriptSoC.setText("Analyze script of SoC");
 
-        jTextField3.setText("/home/honli/perl/dmif_soc_monitor_analyzer/stoney_tewang_mc_stress/soc");
+        jTextFieldOutDirSoC.setText("/home/honli/perl/dmif_soc_monitor_analyzer/stoney_tewang_mc_stress/soc");
 
-        jTextField4.setText("/home/honli/perl/dmif_soc_monitor_analyzer/stoney_tewang_mc_stress/soc");
-        jTextField4.setToolTipText("");
+        jTextFieldScriptSoC.setText("/home/honli/perl/dmif_soc_monitor_analyzer/stoney_tewang_mc_stress/soc");
+        jTextFieldScriptSoC.setToolTipText("");
 
-        jButton4.setText("GO");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        StartSoCAnalyze.setText("GO");
+        StartSoCAnalyze.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                StartSoCAnalyzeActionPerformed(evt);
             }
         });
 
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        jTableSoC.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -177,50 +182,50 @@ public class DmifTransCheckerUI extends javax.swing.JFrame {
 
             }
         ));
-        jScrollPane2.setViewportView(jTable2);
+        jScrollPaneSoC.setViewportView(jTableSoC);
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+        javax.swing.GroupLayout jPanelSoCLayout = new javax.swing.GroupLayout(jPanelSoC);
+        jPanelSoC.setLayout(jPanelSoCLayout);
+        jPanelSoCLayout.setHorizontalGroup(
+            jPanelSoCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelSoCLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanelSoCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanelSoCLayout.createSequentialGroup()
+                        .addGroup(jPanelSoCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabelOutDirSoC, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabelScriptSoC, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(18, 18, 18)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.DEFAULT_SIZE, 1070, Short.MAX_VALUE)
-                            .addComponent(jTextField4, javax.swing.GroupLayout.DEFAULT_SIZE, 1070, Short.MAX_VALUE)))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jButton4)
+                        .addGroup(jPanelSoCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTextFieldOutDirSoC, javax.swing.GroupLayout.DEFAULT_SIZE, 1070, Short.MAX_VALUE)
+                            .addComponent(jTextFieldScriptSoC, javax.swing.GroupLayout.DEFAULT_SIZE, 1070, Short.MAX_VALUE)))
+                    .addGroup(jPanelSoCLayout.createSequentialGroup()
+                        .addComponent(StartSoCAnalyze)
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jScrollPane2))
+                    .addComponent(jScrollPaneSoC))
                 .addContainerGap())
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+        jPanelSoCLayout.setVerticalGroup(
+            jPanelSoCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelSoCLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanelSoCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelOutDirSoC)
+                    .addComponent(jTextFieldOutDirSoC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanelSoCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelScriptSoC)
+                    .addComponent(jTextFieldScriptSoC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton4)
+                .addComponent(StartSoCAnalyze)
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 428, Short.MAX_VALUE)
+                .addComponent(jScrollPaneSoC, javax.swing.GroupLayout.DEFAULT_SIZE, 428, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        jTabbedPane1.addTab("SoC", jPanel2);
+        jTabbedPaneIP.addTab("SoC", jPanelSoC);
 
-        jTable3.setModel(new javax.swing.table.DefaultTableModel(
+        jTableCompareSoC.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -228,9 +233,14 @@ public class DmifTransCheckerUI extends javax.swing.JFrame {
 
             }
         ));
-        jScrollPane3.setViewportView(jTable3);
+        jTableCompareSoC.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTableCompareSoCMouseClicked(evt);
+            }
+        });
+        jScrollPaneCompareSoC.setViewportView(jTableCompareSoC);
 
-        jTable4.setModel(new javax.swing.table.DefaultTableModel(
+        jTableCompareIP.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -238,63 +248,68 @@ public class DmifTransCheckerUI extends javax.swing.JFrame {
 
             }
         ));
-        jScrollPane4.setViewportView(jTable4);
+        jTableCompareIP.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTableCompareIPMouseClicked(evt);
+            }
+        });
+        jScrollPaneCompareIP.setViewportView(jTableCompareIP);
 
-        jButton1.setText("Compare");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        StartIPSoCCompare.setText("Compare");
+        StartIPSoCCompare.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                StartIPSoCCompareActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
+        javax.swing.GroupLayout jPanelCompareLayout = new javax.swing.GroupLayout(jPanelCompare);
+        jPanelCompare.setLayout(jPanelCompareLayout);
+        jPanelCompareLayout.setHorizontalGroup(
+            jPanelCompareLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelCompareLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane3)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jButton1)
+                .addGroup(jPanelCompareLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPaneCompareSoC)
+                    .addGroup(jPanelCompareLayout.createSequentialGroup()
+                        .addComponent(StartIPSoCCompare)
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 1238, Short.MAX_VALUE))
+                    .addComponent(jScrollPaneCompareIP, javax.swing.GroupLayout.DEFAULT_SIZE, 1238, Short.MAX_VALUE))
                 .addContainerGap())
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+        jPanelCompareLayout.setVerticalGroup(
+            jPanelCompareLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelCompareLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
+                .addComponent(jScrollPaneCompareIP, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
                 .addGap(12, 12, 12)
-                .addComponent(jButton1)
+                .addComponent(StartIPSoCCompare)
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
+                .addComponent(jScrollPaneCompareSoC, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        jTabbedPane1.addTab("Compare", jPanel3);
+        jTabbedPaneIP.addTab("Compare", jPanelCompare);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1270, Short.MAX_VALUE)
+            .addComponent(jTabbedPaneIP, javax.swing.GroupLayout.DEFAULT_SIZE, 1270, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 613, Short.MAX_VALUE)
+            .addComponent(jTabbedPaneIP, javax.swing.GroupLayout.DEFAULT_SIZE, 613, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
+    private void jTableIPMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableIPMouseClicked
         // TODO add your handling code here:
-        System.out.println(this.jTable1.getSelectedRow());
-    }//GEN-LAST:event_jTable1MouseClicked
+        System.out.println(this.jTableIP.getSelectedRow());
+    }//GEN-LAST:event_jTableIPMouseClicked
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void StartIPAnalyzeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StartIPAnalyzeActionPerformed
         // TODO add your handling code here:
 
         this.bIPOpened = false;
@@ -302,13 +317,13 @@ public class DmifTransCheckerUI extends javax.swing.JFrame {
         this.jDataSetIP.CleanUp();
 
         DefaultTableModel jReqTableModel = new DefaultTableModel(this.jDataSetIP.DataSrc, this.jDataSetIP.ColName);
-        this.jTable1.setModel(jReqTableModel);
-        this.jTable1.repaint();
-        this.jTable1.updateUI();
+        this.jTableIP.setModel(jReqTableModel);
+        this.jTableIP.repaint();
+        this.jTableIP.updateUI();
 
         System.out.println("IP GO button click.");
-        String jOutputDirText = jTextField1.getText();
-        String jScriptDirText = jTextField2.getText();
+        String jOutputDirText = jTextFieldOutDirIP.getText();
+        String jScriptDirText = jTextFieldScriptIP.getText();
 
         if (jOutputDirText.isEmpty() || jScriptDirText.isEmpty()){
             JOptionPane.showMessageDialog(null, "Both two text field need to be filled in", "Error", JOptionPane.ERROR_MESSAGE);
@@ -393,14 +408,14 @@ public class DmifTransCheckerUI extends javax.swing.JFrame {
                     }
                 }   read.close();
 
-                this.jSetTableColWidth(0, 100, jTable1);
-                this.jSetTableColWidth(1, 100, jTable1);
-                this.jSetTableColWidth(2, 80, jTable1);
-                this.jSetTableColWidth(3, 100, jTable1);
-                this.jSetTableColWidth(4, 80, jTable1);
+                this.jSetTableColWidth(0, 100, jTableIP);
+                this.jSetTableColWidth(1, 100, jTableIP);
+                this.jSetTableColWidth(2, 80, jTableIP);
+                this.jSetTableColWidth(3, 100, jTableIP);
+                this.jSetTableColWidth(4, 80, jTableIP);
 
-                this.jTable1.repaint();
-                this.jTable1.updateUI();
+                this.jTableIP.repaint();
+                this.jTableIP.updateUI();
                 this.bIPOpened = true;
             } catch (FileNotFoundException ex) {
                 Logger.getLogger(DmifTransCheckerUI.class.getName()).log(Level.SEVERE, null, ex);
@@ -417,9 +432,9 @@ public class DmifTransCheckerUI extends javax.swing.JFrame {
         else{
             System.out.println("Error: " + jOutputPath + " not found");
         }
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_StartIPAnalyzeActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void StartSoCAnalyzeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StartSoCAnalyzeActionPerformed
         // TODO add your handling code here:
         
         this.bSoCOpened = false;
@@ -427,13 +442,13 @@ public class DmifTransCheckerUI extends javax.swing.JFrame {
         this.jDataSetSoC.CleanUp();
 
         DefaultTableModel jReqTableModel = new DefaultTableModel(this.jDataSetSoC.DataSrc, this.jDataSetSoC.ColName);
-        this.jTable2.setModel(jReqTableModel);
-        this.jTable2.repaint();
-        this.jTable2.updateUI();
+        this.jTableSoC.setModel(jReqTableModel);
+        this.jTableSoC.repaint();
+        this.jTableSoC.updateUI();
 
         System.out.println("SoC GO button click.");
-        String jOutputDirText = jTextField3.getText();
-        String jScriptDirText = jTextField4.getText();
+        String jOutputDirText = jTextFieldOutDirSoC.getText();
+        String jScriptDirText = jTextFieldScriptSoC.getText();
 
         if (jOutputDirText.isEmpty() || jScriptDirText.isEmpty()){
             JOptionPane.showMessageDialog(null, "Both two text field need to be filled in", "Error", JOptionPane.ERROR_MESSAGE);
@@ -518,14 +533,14 @@ public class DmifTransCheckerUI extends javax.swing.JFrame {
                     }
                 }   read.close();
 
-                this.jSetTableColWidth(0, 100, jTable2);
-                this.jSetTableColWidth(1, 100, jTable2);
-                this.jSetTableColWidth(2, 80, jTable2);
-                this.jSetTableColWidth(3, 100, jTable2);
-                this.jSetTableColWidth(4, 80, jTable2);
+                this.jSetTableColWidth(0, 100, jTableSoC);
+                this.jSetTableColWidth(1, 100, jTableSoC);
+                this.jSetTableColWidth(2, 80, jTableSoC);
+                this.jSetTableColWidth(3, 100, jTableSoC);
+                this.jSetTableColWidth(4, 80, jTableSoC);
 
-                this.jTable2.repaint();
-                this.jTable2.updateUI();
+                this.jTableSoC.repaint();
+                this.jTableSoC.updateUI();
                 this.bSoCOpened = true;
             } catch (FileNotFoundException ex) {
                 Logger.getLogger(DmifTransCheckerUI.class.getName()).log(Level.SEVERE, null, ex);
@@ -542,15 +557,16 @@ public class DmifTransCheckerUI extends javax.swing.JFrame {
         else{
             System.out.println("Error: " + jOutputPath + " not found");
         }
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_StartSoCAnalyzeActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void StartIPSoCCompareActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StartIPSoCCompareActionPerformed
         // TODO add your handling code here:
         if(this.bIPOpened && this.bSoCOpened){
-            Vector vIPDataSet = new Vector();
-            vIPDataSet.addAll(this.jDataSetIP.DataSrc);
-            Vector vSoCDataSet = new Vector();
-            vSoCDataSet.addAll(this.jDataSetSoC.DataSrc);
+            this.vIPDataSet.clear();
+            this.vSoCDataSet.clear();
+            
+            this.vIPDataSet.addAll(this.jDataSetIP.DataSrc);
+            this.vSoCDataSet.addAll(this.jDataSetSoC.DataSrc);
             
             for (int i = 0; i < vIPDataSet.size(); ){
                 boolean bFound = false;
@@ -582,34 +598,68 @@ public class DmifTransCheckerUI extends javax.swing.JFrame {
                 }
             }            
             DefaultTableModel jOutIPTableModel = new DefaultTableModel(vIPDataSet, this.jDataSetIP.ColName);
-            this.jTable4.setModel(jOutIPTableModel);
+            this.jTableCompareIP.setModel(jOutIPTableModel);
 
-            this.jSetTableColWidth(0, 100, jTable4);
-            this.jSetTableColWidth(1, 100, jTable4);
-            this.jSetTableColWidth(2, 80, jTable4);
-            this.jSetTableColWidth(3, 100, jTable4);
-            this.jSetTableColWidth(4, 80, jTable4);
+            this.jSetTableColWidth(0, 100, jTableCompareIP);
+            this.jSetTableColWidth(1, 100, jTableCompareIP);
+            this.jSetTableColWidth(2, 80, jTableCompareIP);
+            this.jSetTableColWidth(3, 100, jTableCompareIP);
+            this.jSetTableColWidth(4, 80, jTableCompareIP);
 
-            this.jTable4.repaint();
-            this.jTable4.updateUI();
+            this.jTableCompareIP.repaint();
+            this.jTableCompareIP.updateUI();
             
             DefaultTableModel jOutSoCTableModel = new DefaultTableModel(vSoCDataSet, this.jDataSetSoC.ColName);
-            this.jTable3.setModel(jOutSoCTableModel);
+            this.jTableCompareSoC.setModel(jOutSoCTableModel);
 
-            this.jSetTableColWidth(0, 100, jTable3);
-            this.jSetTableColWidth(1, 100, jTable3);
-            this.jSetTableColWidth(2, 80, jTable3);
-            this.jSetTableColWidth(3, 100, jTable3);
-            this.jSetTableColWidth(4, 80, jTable3);
+            this.jSetTableColWidth(0, 100, jTableCompareSoC);
+            this.jSetTableColWidth(1, 100, jTableCompareSoC);
+            this.jSetTableColWidth(2, 80, jTableCompareSoC);
+            this.jSetTableColWidth(3, 100, jTableCompareSoC);
+            this.jSetTableColWidth(4, 80, jTableCompareSoC);
 
-            this.jTable3.repaint();
-            this.jTable3.updateUI();
+            this.jTableCompareSoC.repaint();
+            this.jTableCompareSoC.updateUI();
             
         }
         else{
             JOptionPane.showMessageDialog(null, "Need to open analyze IP and SoC results first", "Error", JOptionPane.ERROR_MESSAGE);
         }
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_StartIPSoCCompareActionPerformed
+
+    private void jTableCompareSoCMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableCompareSoCMouseClicked
+        // TODO add your handling code here:
+        this.selectedSoCIndex = -1;
+        System.out.println(this.jTableCompareSoC.getName() + ": " + this.jTableCompareSoC.getSelectedRow() + " has been selected.");
+        this.selectedSoCIndex = this.jTableCompareSoC.getSelectedRow();
+        System.out.println(this.jTableCompareSoC.getName() + ": " + this.vSoCDataSet.get(selectedSoCIndex));
+        if(this.selectedSoCIndex != -1){
+            Vector vSelectedEntry = (Vector) this.vSoCDataSet.get(selectedSoCIndex);
+            for(int i = 0; i < this.jDataSetSoC.DataSrc.size(); i++){
+                Vector vIter = (Vector) this.jDataSetSoC.DataSrc.elementAt(i);
+                if (vIter == vSelectedEntry){
+                    this.jTableSoC.setRowSelectionInterval(i, i);
+                }
+            }
+        }
+    }//GEN-LAST:event_jTableCompareSoCMouseClicked
+
+    private void jTableCompareIPMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableCompareIPMouseClicked
+        // TODO add your handling code here:
+        this.selectedIPIndex = -1;
+        System.out.println(this.jTableCompareIP.getName() + ": " + this.jTableCompareIP.getSelectedRow() + " has been selected.");
+        this.selectedIPIndex = this.jTableCompareIP.getSelectedRow();
+        System.out.println(this.jTableCompareIP.getName() + ": " + this.vIPDataSet.get(selectedIPIndex));
+        if(this.selectedIPIndex != -1){
+            Vector vSelectedEntry = (Vector) this.vIPDataSet.get(selectedIPIndex);
+            for(int i = 0; i < this.jDataSetIP.DataSrc.size(); i++){
+                Vector vIter = (Vector) this.jDataSetIP.DataSrc.elementAt(i);
+                if (vIter == vSelectedEntry){
+                    this.jTableIP.setRowSelectionInterval(i, i);
+                }
+            }
+        }
+    }//GEN-LAST:event_jTableCompareIPMouseClicked
 
     private void jSetTableColWidth(int index, int width, JTable jTableIns){
         TableColumn Column = jTableIns.getColumnModel().getColumn(index);
@@ -654,32 +704,36 @@ public class DmifTransCheckerUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JScrollPane jScrollPane4;
-    private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable2;
-    private javax.swing.JTable jTable3;
-    private javax.swing.JTable jTable4;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
+    private javax.swing.JButton StartIPAnalyze;
+    private javax.swing.JButton StartIPSoCCompare;
+    private javax.swing.JButton StartSoCAnalyze;
+    private javax.swing.JLabel jLabelOutDirIP;
+    private javax.swing.JLabel jLabelOutDirSoC;
+    private javax.swing.JLabel jLabelScriptIP;
+    private javax.swing.JLabel jLabelScriptSoC;
+    private javax.swing.JPanel jPanelCompare;
+    private javax.swing.JPanel jPanelIP;
+    private javax.swing.JPanel jPanelSoC;
+    private javax.swing.JScrollPane jScrollPaneCompareIP;
+    private javax.swing.JScrollPane jScrollPaneCompareSoC;
+    private javax.swing.JScrollPane jScrollPaneIP;
+    private javax.swing.JScrollPane jScrollPaneSoC;
+    private javax.swing.JTabbedPane jTabbedPaneIP;
+    private javax.swing.JTable jTableCompareIP;
+    private javax.swing.JTable jTableCompareSoC;
+    private javax.swing.JTable jTableIP;
+    private javax.swing.JTable jTableSoC;
+    private javax.swing.JTextField jTextFieldOutDirIP;
+    private javax.swing.JTextField jTextFieldOutDirSoC;
+    private javax.swing.JTextField jTextFieldScriptIP;
+    private javax.swing.JTextField jTextFieldScriptSoC;
     // End of variables declaration//GEN-END:variables
     private DataSet jDataSetIP;
     private DataSet jDataSetSoC;
     private boolean bIPOpened;
     private boolean bSoCOpened;
+    private Vector vIPDataSet;
+    private Vector vSoCDataSet;
+    private int selectedSoCIndex;
+    private int selectedIPIndex;
 }
