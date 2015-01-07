@@ -79,15 +79,12 @@ public class DmifTransCheckerUI extends javax.swing.JFrame {
         setTitle("DmifTransChecker");
         setPreferredSize(new java.awt.Dimension(1270, 800));
 
+        jTabbedPaneIP.setToolTipText("");
         jTabbedPaneIP.setPreferredSize(new java.awt.Dimension(1280, 800));
 
         jLabelOutDirIP.setText("Output directory of IP");
 
         jLabelScriptIP.setText("Analyze script of IP");
-
-        jTextFieldOutDirIP.setText("/home/honli/perl/dmif_soc_monitor_analyzer/stoney_tewang_mc_stress/ip");
-
-        jTextFieldScriptIP.setText("/home/honli/perl/dmif_soc_monitor_analyzer/stoney_tewang_mc_stress/ip");
 
         StartIPAnalyze.setText("GO");
         StartIPAnalyze.addActionListener(new java.awt.event.ActionListener() {
@@ -162,9 +159,6 @@ public class DmifTransCheckerUI extends javax.swing.JFrame {
 
         jLabelScriptSoC.setText("Analyze script of SoC");
 
-        jTextFieldOutDirSoC.setText("/home/honli/perl/dmif_soc_monitor_analyzer/stoney_tewang_mc_stress/soc");
-
-        jTextFieldScriptSoC.setText("/home/honli/perl/dmif_soc_monitor_analyzer/stoney_tewang_mc_stress/soc");
         jTextFieldScriptSoC.setToolTipText("");
 
         StartSoCAnalyze.setText("GO");
@@ -349,7 +343,7 @@ public class DmifTransCheckerUI extends javax.swing.JFrame {
             return;
         }
 
-        String jFileScript = jOutputDirText + System.getProperty("file.separator") + "dmif_soc_monitor_analyzer.pl";
+        String jFileScript = jScriptDirText + System.getProperty("file.separator") + "dmif_soc_monitor_analyzer.pl";
         if(new File(jFileScript).exists()) {
             System.out.println(jFileScript + " exists");
         }
@@ -474,7 +468,7 @@ public class DmifTransCheckerUI extends javax.swing.JFrame {
             return;
         }
 
-        String jFileScript = jOutputDirText + System.getProperty("file.separator") + "dmif_soc_monitor_analyzer.pl";
+        String jFileScript = jScriptDirText + System.getProperty("file.separator") + "dmif_soc_monitor_analyzer.pl";
         if(new File(jFileScript).exists()) {
             System.out.println(jFileScript + " exists");
         }
