@@ -5,6 +5,7 @@
  */
 package my.DmifTransCheckerUI;
 
+import java.awt.Point;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
@@ -633,6 +634,12 @@ public class DmifTransCheckerUI extends javax.swing.JFrame {
                 Vector vIter = (Vector) this.jDataSetSoC.DataSrc.elementAt(i);
                 if (vIter == vSelectedEntry){
                     this.jTableSoC.setRowSelectionInterval(i, i);
+                    
+                    //goto the selected line
+                    Point p = new Point();
+                    p.setLocation(0, i * this.jTableSoC.getRowHeight());
+                    this.jScrollPaneSoC.getViewport().setViewPosition(p);
+                    break;
                 }
             }
         }
@@ -650,6 +657,12 @@ public class DmifTransCheckerUI extends javax.swing.JFrame {
                 Vector vIter = (Vector) this.jDataSetIP.DataSrc.elementAt(i);
                 if (vIter == vSelectedEntry){
                     this.jTableIP.setRowSelectionInterval(i, i);
+                    
+                    //goto the selected line
+                    Point p = new Point();
+                    p.setLocation(0, i * this.jTableIP.getRowHeight());
+                    this.jScrollPaneIP.getViewport().setViewPosition(p);
+                    break;
                 }
             }
         }
