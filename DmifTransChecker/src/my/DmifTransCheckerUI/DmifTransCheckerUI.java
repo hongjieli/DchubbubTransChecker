@@ -105,6 +105,7 @@ public class DmifTransCheckerUI extends javax.swing.JFrame {
         ));
         jTableIP.setToolTipText("");
         jTableIP.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_ALL_COLUMNS);
+        jTableIP.setColumnSelectionAllowed(true);
         jTableIP.setOpaque(false);
         jTableIP.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         jTableIP.addMouseListener(new java.awt.event.MouseAdapter() {
