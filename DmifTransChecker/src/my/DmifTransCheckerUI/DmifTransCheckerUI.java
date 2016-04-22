@@ -624,11 +624,13 @@ public class DmifTransCheckerUI extends javax.swing.JFrame {
             DefaultTableModel jOutIPTableModel = new DefaultTableModel(vIPDataSet, this.jDataSetIP.ColName);
             this.jTableCompareIP.setModel(jOutIPTableModel);
 
-            this.jSetTableColWidth(0, 100, jTableCompareIP);
-            this.jSetTableColWidth(1, 100, jTableCompareIP);
-            this.jSetTableColWidth(2, 80, jTableCompareIP);
-            this.jSetTableColWidth(3, 100, jTableCompareIP);
-            this.jSetTableColWidth(4, 80, jTableCompareIP);
+                this.jSetTableColWidth(0, 10, jTableCompareIP);
+                this.jSetTableColWidth(1, 10, jTableCompareIP);                                
+                this.jSetTableColWidth(2, 100, jTableCompareIP);
+                this.jSetTableColWidth(3, 100, jTableCompareIP);
+                this.jSetTableColWidth(4, 50, jTableCompareIP);
+                this.jSetTableColWidth(5, 100, jTableCompareIP);
+                this.jSetTableColWidth(6, 80, jTableCompareIP);
 
             this.jTableCompareIP.repaint();
             this.jTableCompareIP.updateUI();
@@ -636,11 +638,13 @@ public class DmifTransCheckerUI extends javax.swing.JFrame {
             DefaultTableModel jOutSoCTableModel = new DefaultTableModel(vSoCDataSet, this.jDataSetSoC.ColName);
             this.jTableCompareSoC.setModel(jOutSoCTableModel);
 
-            this.jSetTableColWidth(0, 100, jTableCompareSoC);
-            this.jSetTableColWidth(1, 100, jTableCompareSoC);
-            this.jSetTableColWidth(2, 80, jTableCompareSoC);
-            this.jSetTableColWidth(3, 100, jTableCompareSoC);
-            this.jSetTableColWidth(4, 80, jTableCompareSoC);
+                this.jSetTableColWidth(0, 10, jTableCompareSoC);
+                this.jSetTableColWidth(1, 10, jTableCompareSoC);                                
+                this.jSetTableColWidth(2, 100, jTableCompareSoC);
+                this.jSetTableColWidth(3, 100, jTableCompareSoC);
+                this.jSetTableColWidth(4, 50, jTableCompareSoC);
+                this.jSetTableColWidth(5, 100, jTableCompareSoC);
+                this.jSetTableColWidth(6, 80, jTableCompareSoC);
 
             this.jTableCompareSoC.repaint();
             this.jTableCompareSoC.updateUI();
