@@ -75,6 +75,8 @@ public class DmifTransCheckerUI extends javax.swing.JFrame {
         jScrollPaneCompareIP = new javax.swing.JScrollPane();
         jTableCompareIP = new javax.swing.JTable();
         StartIPSoCCompare = new javax.swing.JButton();
+        jTextFrameToCompare = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("DmifTransChecker");
@@ -258,6 +260,8 @@ public class DmifTransCheckerUI extends javax.swing.JFrame {
             }
         });
 
+        jLabel1.setText("Select Frame to compare");
+
         javax.swing.GroupLayout jPanelCompareLayout = new javax.swing.GroupLayout(jPanelCompare);
         jPanelCompare.setLayout(jPanelCompareLayout);
         jPanelCompareLayout.setHorizontalGroup(
@@ -266,21 +270,28 @@ public class DmifTransCheckerUI extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanelCompareLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPaneCompareSoC)
+                    .addComponent(jScrollPaneCompareIP, javax.swing.GroupLayout.DEFAULT_SIZE, 1238, Short.MAX_VALUE)
                     .addGroup(jPanelCompareLayout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextFrameToCompare, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(StartIPSoCCompare)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jScrollPaneCompareIP, javax.swing.GroupLayout.DEFAULT_SIZE, 1238, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanelCompareLayout.setVerticalGroup(
             jPanelCompareLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelCompareLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPaneCompareIP, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
-                .addGap(12, 12, 12)
-                .addComponent(StartIPSoCCompare)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPaneCompareSoC, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
+                .addComponent(jScrollPaneCompareIP, javax.swing.GroupLayout.DEFAULT_SIZE, 247, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanelCompareLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(StartIPSoCCompare)
+                    .addComponent(jTextFrameToCompare, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1))
+                .addGap(24, 24, 24)
+                .addComponent(jScrollPaneCompareSoC, javax.swing.GroupLayout.DEFAULT_SIZE, 246, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -535,13 +546,13 @@ public class DmifTransCheckerUI extends javax.swing.JFrame {
                     }
                 }   read.close();
 
-                this.jSetTableColWidth(0, 10, jTableIP);
-                this.jSetTableColWidth(1, 10, jTableIP);                                
-                this.jSetTableColWidth(2, 100, jTableIP);
-                this.jSetTableColWidth(3, 100, jTableIP);
-                this.jSetTableColWidth(4, 50, jTableIP);
-                this.jSetTableColWidth(5, 100, jTableIP);
-                this.jSetTableColWidth(6, 80, jTableIP);
+                this.jSetTableColWidth(0, 10, jTableSoC);
+                this.jSetTableColWidth(1, 10, jTableSoC);                                
+                this.jSetTableColWidth(2, 100, jTableSoC);
+                this.jSetTableColWidth(3, 100, jTableSoC);
+                this.jSetTableColWidth(4, 50, jTableSoC);
+                this.jSetTableColWidth(5, 100, jTableSoC);
+                this.jSetTableColWidth(6, 80, jTableSoC);
 
                 this.jTableSoC.repaint();
                 this.jTableSoC.updateUI();
@@ -565,9 +576,11 @@ public class DmifTransCheckerUI extends javax.swing.JFrame {
 
     private void StartIPSoCCompareActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StartIPSoCCompareActionPerformed
         // TODO add your handling code here:
-        if(this.bIPOpened && this.bSoCOpened){
+        if(this.bIPOpened && this.bSoCOpened){            
             this.vIPDataSet.clear();
             this.vSoCDataSet.clear();
+            
+            String sFrameToCompare = this.jTextFrameToCompare.getText();
             
             this.vIPDataSet.addAll(this.jDataSetIP.DataSrc);
             this.vSoCDataSet.addAll(this.jDataSetSoC.DataSrc);
@@ -576,6 +589,11 @@ public class DmifTransCheckerUI extends javax.swing.JFrame {
                 boolean bFound = false;
                 Vector vIPElement = (Vector) vIPDataSet.elementAt(i);
                 String vIPFrameCnt = (String) vIPElement.elementAt(0);
+                
+                if(!sFrameToCompare.equals(vIPFrameCnt)){
+                    continue; //skip line which FrameCnt mismatch
+                }
+                
                 String vIPTag = (String) vIPElement.elementAt(4);
                 String vIPData1 = (String) vIPElement.elementAt(7);
                 String vIPData2 = (String) vIPElement.elementAt(8);
@@ -725,6 +743,7 @@ public class DmifTransCheckerUI extends javax.swing.JFrame {
     private javax.swing.JButton StartIPAnalyze;
     private javax.swing.JButton StartIPSoCCompare;
     private javax.swing.JButton StartSoCAnalyze;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabelOutDirIP;
     private javax.swing.JLabel jLabelOutDirSoC;
     private javax.swing.JLabel jLabelScriptIP;
@@ -745,6 +764,7 @@ public class DmifTransCheckerUI extends javax.swing.JFrame {
     private javax.swing.JTextField jTextFieldOutDirSoC;
     private javax.swing.JTextField jTextFieldScriptIP;
     private javax.swing.JTextField jTextFieldScriptSoC;
+    private javax.swing.JTextField jTextFrameToCompare;
     // End of variables declaration//GEN-END:variables
     private DataSet jDataSetIP;
     private DataSet jDataSetSoC;
