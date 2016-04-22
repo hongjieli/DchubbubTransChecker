@@ -16,9 +16,11 @@ public class DataSet {
     public Vector ColName = new Vector();
 
     public DataSet() {
+        this.ColName.addElement("FrameCnt");
+        this.ColName.addElement("UinitID");
         this.ColName.addElement("ReqTime");
         this.ColName.addElement("ReqAddress");
-        this.ColName.addElement("Tag");
+        this.ColName.addElement("Tag");        
         this.ColName.addElement("RetTime");
         this.ColName.addElement("DeltaTime");
         this.ColName.addElement("Data1");
