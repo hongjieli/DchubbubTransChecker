@@ -327,7 +327,7 @@ public class DmifTransCheckerUI extends javax.swing.JFrame {
         }
         System.out.println("jOutputDirText: " + jOutputDirText + "\njScriptDirText: " + jScriptDirText);
 
-        String jFileReqTxt = jOutputDirText + System.getProperty("file.separator") + "dmif_freq_soc_monitor.txt";
+        String jFileReqTxt = jOutputDirText + System.getProperty("file.separator") + "dchubbub_freq_monitor.txt";
         if(new File(jFileReqTxt).exists()) {
             System.out.println(jFileReqTxt + " exists");
         }
@@ -336,7 +336,7 @@ public class DmifTransCheckerUI extends javax.swing.JFrame {
             return;
         }
 
-        String jFileRetTxt = jOutputDirText + System.getProperty("file.separator") + "dmif_fret_soc_monitor.txt";
+        String jFileRetTxt = jOutputDirText + System.getProperty("file.separator") + "dchubbub_frsp_monitor.txt";
         if(new File(jFileRetTxt).exists()) {
             System.out.println(jFileRetTxt + " exists");
         }
@@ -345,7 +345,7 @@ public class DmifTransCheckerUI extends javax.swing.JFrame {
             return;
         }
 
-        String jFileScript = jScriptDirText + System.getProperty("file.separator") + "dmif_soc_monitor_analyzer.pl";
+        String jFileScript = jScriptDirText + System.getProperty("file.separator") + "dchubbub_monitor_analyzer.pl";
         if(new File(jFileScript).exists()) {
             System.out.println(jFileScript + " exists");
         }
@@ -386,15 +386,17 @@ public class DmifTransCheckerUI extends javax.swing.JFrame {
                 String lineTxt = null;
                 while((lineTxt = bufferedReader.readLine()) != null){
                     String[] strArray = lineTxt.split(" ");
-                    if(strArray.length == 10){
+                    if(strArray.length == 11){
                         Vector jReqElement = new Vector();
-                        jReqElement.addElement(strArray[0]);
-                        jReqElement.addElement(strArray[1]);
-                        jReqElement.addElement("0x" + Integer.toHexString(Integer.parseInt(strArray[2])));
-                        jReqElement.addElement(strArray[3]);
-                        jReqElement.addElement(strArray[9]);
-                        jReqElement.addElement(strArray[7]);
-                        jReqElement.addElement(strArray[8]);
+                        jReqElement.addElement(strArray[1]); //FrameCount
+                        jReqElement.addElement(strArray[6]); //UnitID 
+                        jReqElement.addElement(strArray[0]); //ReqTime
+                        jReqElement.addElement(strArray[2]); //ReqAddress
+                        jReqElement.addElement("0x" + Integer.toHexString(Integer.parseInt(strArray[3]))); //ReqTag
+                        jReqElement.addElement(strArray[4]); //RetTime
+                        jReqElement.addElement(strArray[10]); //DeltaTime
+                        jReqElement.addElement(strArray[8]); //Data1
+                        jReqElement.addElement(strArray[9]); //Data2
 
                         this.jDataSetIP.DataSrc.addElement(jReqElement);
                     }
@@ -404,11 +406,13 @@ public class DmifTransCheckerUI extends javax.swing.JFrame {
                     }
                 }   read.close();
 
-                this.jSetTableColWidth(0, 100, jTableIP);
-                this.jSetTableColWidth(1, 100, jTableIP);
-                this.jSetTableColWidth(2, 80, jTableIP);
+                this.jSetTableColWidth(0, 10, jTableIP);
+                this.jSetTableColWidth(1, 10, jTableIP);                                
+                this.jSetTableColWidth(2, 100, jTableIP);
                 this.jSetTableColWidth(3, 100, jTableIP);
-                this.jSetTableColWidth(4, 80, jTableIP);
+                this.jSetTableColWidth(4, 50, jTableIP);
+                this.jSetTableColWidth(5, 100, jTableIP);
+                this.jSetTableColWidth(6, 80, jTableIP);
 
                 this.jTableIP.repaint();
                 this.jTableIP.updateUI();
@@ -452,7 +456,7 @@ public class DmifTransCheckerUI extends javax.swing.JFrame {
         }
         System.out.println("jOutputDirText: " + jOutputDirText + "\njScriptDirText: " + jScriptDirText);
 
-        String jFileReqTxt = jOutputDirText + System.getProperty("file.separator") + "dmif_freq_soc_monitor.txt";
+        String jFileReqTxt = jOutputDirText + System.getProperty("file.separator") + "dchubbub_freq_monitor.txt";
         if(new File(jFileReqTxt).exists()) {
             System.out.println(jFileReqTxt + " exists");
         }
@@ -461,7 +465,7 @@ public class DmifTransCheckerUI extends javax.swing.JFrame {
             return;
         }
 
-        String jFileRetTxt = jOutputDirText + System.getProperty("file.separator") + "dmif_fret_soc_monitor.txt";
+        String jFileRetTxt = jOutputDirText + System.getProperty("file.separator") + "dchubbub_frsp_monitor.txt";
         if(new File(jFileRetTxt).exists()) {
             System.out.println(jFileRetTxt + " exists");
         }
@@ -470,7 +474,7 @@ public class DmifTransCheckerUI extends javax.swing.JFrame {
             return;
         }
 
-        String jFileScript = jScriptDirText + System.getProperty("file.separator") + "dmif_soc_monitor_analyzer.pl";
+        String jFileScript = jScriptDirText + System.getProperty("file.separator") + "dchubbub_monitor_analyzer.pl";
         if(new File(jFileScript).exists()) {
             System.out.println(jFileScript + " exists");
         }
@@ -511,15 +515,17 @@ public class DmifTransCheckerUI extends javax.swing.JFrame {
                 String lineTxt = null;
                 while((lineTxt = bufferedReader.readLine()) != null){
                     String[] strArray = lineTxt.split(" ");
-                    if(strArray.length == 10){
+                    if(strArray.length == 11){
                         Vector jReqElement = new Vector();
-                        jReqElement.addElement(strArray[0]);
-                        jReqElement.addElement(strArray[1]);
-                        jReqElement.addElement("0x" + Integer.toHexString(Integer.parseInt(strArray[2])));
-                        jReqElement.addElement(strArray[3]);
-                        jReqElement.addElement(strArray[9]);
-                        jReqElement.addElement(strArray[7]);
-                        jReqElement.addElement(strArray[8]);
+                        jReqElement.addElement(strArray[1]); //FrameCount
+                        jReqElement.addElement(strArray[6]); //UnitID 
+                        jReqElement.addElement(strArray[0]); //ReqTime
+                        jReqElement.addElement(strArray[2]); //ReqAddress
+                        jReqElement.addElement("0x" + Integer.toHexString(Integer.parseInt(strArray[3]))); //ReqTag
+                        jReqElement.addElement(strArray[4]); //RetTime
+                        jReqElement.addElement(strArray[10]); //DeltaTime
+                        jReqElement.addElement(strArray[8]); //Data1
+                        jReqElement.addElement(strArray[9]); //Data2
 
                         this.jDataSetSoC.DataSrc.addElement(jReqElement);
                     }
@@ -529,11 +535,13 @@ public class DmifTransCheckerUI extends javax.swing.JFrame {
                     }
                 }   read.close();
 
-                this.jSetTableColWidth(0, 100, jTableSoC);
-                this.jSetTableColWidth(1, 100, jTableSoC);
-                this.jSetTableColWidth(2, 80, jTableSoC);
-                this.jSetTableColWidth(3, 100, jTableSoC);
-                this.jSetTableColWidth(4, 80, jTableSoC);
+                this.jSetTableColWidth(0, 10, jTableIP);
+                this.jSetTableColWidth(1, 10, jTableIP);                                
+                this.jSetTableColWidth(2, 100, jTableIP);
+                this.jSetTableColWidth(3, 100, jTableIP);
+                this.jSetTableColWidth(4, 50, jTableIP);
+                this.jSetTableColWidth(5, 100, jTableIP);
+                this.jSetTableColWidth(6, 80, jTableIP);
 
                 this.jTableSoC.repaint();
                 this.jTableSoC.updateUI();
@@ -567,16 +575,18 @@ public class DmifTransCheckerUI extends javax.swing.JFrame {
             for (int i = 0; i < vIPDataSet.size(); ){
                 boolean bFound = false;
                 Vector vIPElement = (Vector) vIPDataSet.elementAt(i);
-                String vIPTag = (String) vIPElement.elementAt(2);
-                String vIPData1 = (String) vIPElement.elementAt(5);
-                String vIPData2 = (String) vIPElement.elementAt(6);
-                for (int j = 0; j < vSoCDataSet.size();){
+                String vIPFrameCnt = (String) vIPElement.elementAt(0);
+                String vIPTag = (String) vIPElement.elementAt(4);
+                String vIPData1 = (String) vIPElement.elementAt(7);
+                String vIPData2 = (String) vIPElement.elementAt(8);
+                for (int j = 0; j < vSoCDataSet.size();){                    
                     Vector vSoCElement = (Vector) vSoCDataSet.elementAt(j);
-                    String vSoCTag = (String) vSoCElement.elementAt(2);
-                    String vSoCData1 = (String) vSoCElement.elementAt(5);
-                    String vSoCData2 = (String) vSoCElement.elementAt(6);
+                    String vSoCFrameCnt = (String) vSoCElement.elementAt(0);
+                    String vSoCTag = (String) vSoCElement.elementAt(4);
+                    String vSoCData1 = (String) vSoCElement.elementAt(7);
+                    String vSoCData2 = (String) vSoCElement.elementAt(8);
                     
-                    if(vIPTag.equals(vSoCTag) && vIPData1.equals(vSoCData1) && vIPData2.equals(vSoCData2)){                        
+                    if( vIPFrameCnt.equals(vSoCFrameCnt) && vIPTag.equals(vSoCTag) && vIPData1.equals(vSoCData1) && vIPData2.equals(vSoCData2)){                        
                         vSoCDataSet.remove(j);
                         bFound = true;
                         break;
