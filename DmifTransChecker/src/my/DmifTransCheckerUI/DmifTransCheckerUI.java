@@ -79,7 +79,7 @@ public class DmifTransCheckerUI extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("DmifTransChecker");
+        setTitle("DCHubbubChecker");
         setPreferredSize(new java.awt.Dimension(1270, 800));
 
         jTabbedPaneIP.setToolTipText("");
