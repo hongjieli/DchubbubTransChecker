@@ -585,14 +585,41 @@ public class DmifTransCheckerUI extends javax.swing.JFrame {
             this.vIPDataSet.addAll(this.jDataSetIP.DataSrc);
             this.vSoCDataSet.addAll(this.jDataSetSoC.DataSrc);
             
+            for (int i = 0; i < vIPDataSet.size();) {
+
+                Vector vIPElement = (Vector) vIPDataSet.elementAt(i);
+                String vIPFrameCnt = (String) vIPElement.elementAt(0);
+                //System.out.println(sFrameToCompare+" "+vIPFrameCnt+" "+vIPDataSet.size());
+                if (!sFrameToCompare.equals(vIPFrameCnt)) {
+                    //System.out.println(sFrameToCompare+" "+vIPFrameCnt+" "+vIPDataSet.size());
+                    vIPDataSet.remove(i);
+                    continue;
+
+                    //skip line which FrameCnt mismatch
+                }
+                i++;
+            }
+
+            for (int i = 0; i < vSoCDataSet.size();) {
+
+                Vector vSoCElement = (Vector) vSoCDataSet.elementAt(i);
+                String vSoCFrameCnt = (String) vSoCElement.elementAt(0);
+                if (!sFrameToCompare.equals(vSoCFrameCnt)) {
+                    //System.out.println(sFrameToCompare+" "+vSoCFrameCnt+" "+vSoCDataSet.size());
+                    vSoCDataSet.remove(i);
+                    continue;
+
+                    //skip line which FrameCnt mismatch
+                }
+                i++;
+            }
+             
             for (int i = 0; i < vIPDataSet.size(); ){
                 boolean bFound = false;
+                
                 Vector vIPElement = (Vector) vIPDataSet.elementAt(i);
                 String vIPFrameCnt = (String) vIPElement.elementAt(0);
                 
-                if(!sFrameToCompare.equals(vIPFrameCnt)){
-                    continue; //skip line which FrameCnt mismatch
-                }
                 
                 String vIPTag = (String) vIPElement.elementAt(4);
                 String vIPData1 = (String) vIPElement.elementAt(7);
