@@ -59,22 +59,23 @@
                   <Group type="102" attributes="0">
                       <EmptySpace min="-2" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Component id="StartIPAnalyze" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                          </Group>
-                          <Group type="102" attributes="0">
+                          <Component id="jScrollPaneIP" max="32767" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="jLabelOutDirIP" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabelScriptIP" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="StartIPAnalyze" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <Component id="bIPOvertimeFilter" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                  </Group>
                                   <Component id="jTextFieldOutDirIP" pref="1085" max="32767" attributes="0"/>
                                   <Component id="jTextFieldScriptIP" max="32767" attributes="0"/>
                               </Group>
                           </Group>
-                          <Component id="jScrollPaneIP" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
@@ -94,9 +95,12 @@
                           <Component id="jTextFieldScriptIP" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
-                      <Component id="StartIPAnalyze" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="StartIPAnalyze" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="bIPOvertimeFilter" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jScrollPaneIP" pref="429" max="32767" attributes="0"/>
+                      <Component id="jScrollPaneIP" pref="422" max="32767" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -160,6 +164,14 @@
                 </Component>
               </SubComponents>
             </Container>
+            <Component class="javax.swing.JButton" name="bIPOvertimeFilter">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Overtime"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bIPOvertimeFilterActionPerformed"/>
+              </Events>
+            </Component>
           </SubComponents>
         </Container>
         <Container class="javax.swing.JPanel" name="jPanelSoC">
@@ -177,22 +189,25 @@
                   <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="jLabelOutDirSoC" max="32767" attributes="0"/>
-                                  <Component id="jLabelScriptSoC" max="32767" attributes="0"/>
+                          <Component id="jScrollPaneSoC" max="32767" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="jLabelOutDirSoC" max="32767" attributes="0"/>
+                                      <Component id="jLabelScriptSoC" max="32767" attributes="0"/>
+                                  </Group>
+                                  <Component id="StartSoCAnalyze" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <Component id="bSoCOvertimeFilter" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                  </Group>
                                   <Component id="jTextFieldOutDirSoC" pref="1070" max="32767" attributes="0"/>
                                   <Component id="jTextFieldScriptSoC" pref="1070" max="32767" attributes="0"/>
                               </Group>
                           </Group>
-                          <Group type="102" attributes="0">
-                              <Component id="StartSoCAnalyze" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                          </Group>
-                          <Component id="jScrollPaneSoC" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
@@ -212,7 +227,10 @@
                           <Component id="jTextFieldScriptSoC" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="StartSoCAnalyze" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="StartSoCAnalyze" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="bSoCOvertimeFilter" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="jScrollPaneSoC" pref="428" max="32767" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
@@ -268,6 +286,14 @@
                 </Component>
               </SubComponents>
             </Container>
+            <Component class="javax.swing.JButton" name="bSoCOvertimeFilter">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Overtime"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bSoCOvertimeFilterActionPerformed"/>
+              </Events>
+            </Component>
           </SubComponents>
         </Container>
         <Container class="javax.swing.JPanel" name="jPanelCompare">

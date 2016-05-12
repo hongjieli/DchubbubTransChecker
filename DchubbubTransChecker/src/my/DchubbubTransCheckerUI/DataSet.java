@@ -16,6 +16,7 @@ public class DataSet {
     public Vector ColName = new Vector();
 
     public DataSet() {
+        this.ColName.addElement("Overtime");
         this.ColName.addElement("FrameCnt");
         this.ColName.addElement("UinitID");
         this.ColName.addElement("ReqTime");
