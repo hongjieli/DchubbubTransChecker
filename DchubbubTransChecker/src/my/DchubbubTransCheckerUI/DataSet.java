@@ -25,7 +25,8 @@ public class DataSet {
         this.ColName.addElement("RetTime");
         this.ColName.addElement("DeltaTime");
         this.ColName.addElement("Data1");
-        this.ColName.addElement("Data2");        
+        this.ColName.addElement("Data2");  
+        this.ColName.addElement("Qos"); 
     }
     
     public void CleanUp(){

@@ -193,6 +193,7 @@ public class DchubbubTransCheckerUI extends javax.swing.JFrame {
 
             }
         ));
+        jTableSoC.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
         jScrollPaneSoC.setViewportView(jTableSoC);
 
         bSoCOvertimeFilter.setText("Overtime");
@@ -421,7 +422,7 @@ public class DchubbubTransCheckerUI extends javax.swing.JFrame {
                 String lineTxt = null;
                 while((lineTxt = bufferedReader.readLine()) != null){
                     String[] strArray = lineTxt.split(" ");
-                    if(strArray.length == 12){
+                    if(strArray.length == 13){
                         Vector jReqElement = new Vector();
                         jReqElement.addElement(strArray[11]);//overtime
                         jReqElement.addElement(strArray[1]); //FrameCount
@@ -433,19 +434,20 @@ public class DchubbubTransCheckerUI extends javax.swing.JFrame {
                         jReqElement.addElement(strArray[10]); //DeltaTime
                         jReqElement.addElement(strArray[9]); //Data1
                         jReqElement.addElement(strArray[8]); //Data2
+                        jReqElement.addElement(strArray[12]); //Qos
                         
                       
 
                         this.jDataSetIP.DataSrc.addElement(jReqElement);
                     }
                     else{
-                        System.out.println("Error: Data Format mismatch");
+                        System.out.println("Error: Data Formatdd mismatch");
                         return ;
                     }
                 }   read.close();
 
-                this.jSetTableColWidth(0, 80, jTableIP);
-                this.jSetTableColWidth(1, 80, jTableIP); 
+                this.jSetTableColWidth(0, 50, jTableIP);
+                this.jSetTableColWidth(1, 60, jTableIP); 
                 this.jSetTableColWidth(2, 80, jTableIP);
                 this.jSetTableColWidth(3, 100, jTableIP);
                 this.jSetTableColWidth(4, 150, jTableIP);
@@ -454,6 +456,7 @@ public class DchubbubTransCheckerUI extends javax.swing.JFrame {
                 this.jSetTableColWidth(7, 80, jTableIP);
                 this.jSetTableColWidth(8, 300, jTableIP);
                 this.jSetTableColWidth(9, 300, jTableIP);
+                this.jSetTableColWidth(10, 50, jTableIP);
 
                 this.jTableIP.repaint();
                 this.jTableIP.updateUI();
@@ -555,7 +558,7 @@ public class DchubbubTransCheckerUI extends javax.swing.JFrame {
                 String lineTxt = null;
                 while((lineTxt = bufferedReader.readLine()) != null){
                     String[] strArray = lineTxt.split(" ");
-                    if(strArray.length == 12){
+                    if(strArray.length == 13){
                         Vector jReqElement = new Vector();
                         jReqElement.addElement(strArray[11]);
                         jReqElement.addElement(strArray[1]); //FrameCount
@@ -567,6 +570,7 @@ public class DchubbubTransCheckerUI extends javax.swing.JFrame {
                         jReqElement.addElement(strArray[10]); //DeltaTime
                         jReqElement.addElement(strArray[9]); //Data1
                         jReqElement.addElement(strArray[8]); //Data2
+                        jReqElement.addElement(strArray[12]); //Data2
 
 
                         this.jDataSetSoC.DataSrc.addElement(jReqElement);
@@ -577,8 +581,8 @@ public class DchubbubTransCheckerUI extends javax.swing.JFrame {
                     }
                 }   read.close();
                 
-                  this.jSetTableColWidth(0, 80, jTableSoC);
-                  this.jSetTableColWidth(1, 80, jTableSoC); 
+                  this.jSetTableColWidth(0, 50, jTableSoC);
+                  this.jSetTableColWidth(1, 60, jTableSoC); 
                   this.jSetTableColWidth(2, 80, jTableSoC);
                   this.jSetTableColWidth(3, 100, jTableSoC);
                   this.jSetTableColWidth(4, 150, jTableSoC);
@@ -587,6 +591,7 @@ public class DchubbubTransCheckerUI extends javax.swing.JFrame {
                   this.jSetTableColWidth(7, 80, jTableSoC);
                   this.jSetTableColWidth(8, 300, jTableSoC);
                   this.jSetTableColWidth(9, 300, jTableSoC);
+                  this.jSetTableColWidth(10, 50, jTableSoC);
                  
 
 
@@ -689,8 +694,8 @@ public class DchubbubTransCheckerUI extends javax.swing.JFrame {
             this.jTableCompareIP.setModel(jOutIPTableModel);
 
 
-                  this.jSetTableColWidth(0, 80, jTableCompareIP);
-                  this.jSetTableColWidth(1, 80, jTableCompareIP); 
+                  this.jSetTableColWidth(0, 50, jTableCompareIP);
+                  this.jSetTableColWidth(1, 60, jTableCompareIP); 
                   this.jSetTableColWidth(2, 80, jTableCompareIP);
                   this.jSetTableColWidth(3, 100, jTableCompareIP);
                   this.jSetTableColWidth(4, 150, jTableCompareIP);
@@ -699,6 +704,7 @@ public class DchubbubTransCheckerUI extends javax.swing.JFrame {
                   this.jSetTableColWidth(7, 80, jTableCompareIP);
                   this.jSetTableColWidth(8, 300, jTableCompareIP);
                   this.jSetTableColWidth(9, 300, jTableCompareIP);
+                  this.jSetTableColWidth(10, 50, jTableCompareIP);
             
 
             this.jTableCompareIP.repaint();
@@ -708,8 +714,8 @@ public class DchubbubTransCheckerUI extends javax.swing.JFrame {
             this.jTableCompareSoC.setModel(jOutSoCTableModel);
 
 
-                  this.jSetTableColWidth(0, 80, jTableCompareSoC);
-                  this.jSetTableColWidth(1, 80, jTableCompareSoC); 
+                  this.jSetTableColWidth(0, 50, jTableCompareSoC);
+                  this.jSetTableColWidth(1, 60, jTableCompareSoC); 
                   this.jSetTableColWidth(2, 80, jTableCompareSoC);
                   this.jSetTableColWidth(3, 100, jTableCompareSoC);
                   this.jSetTableColWidth(4, 150, jTableCompareSoC);
@@ -718,6 +724,7 @@ public class DchubbubTransCheckerUI extends javax.swing.JFrame {
                   this.jSetTableColWidth(7, 80, jTableCompareSoC);
                   this.jSetTableColWidth(8, 300, jTableCompareSoC);
                   this.jSetTableColWidth(9, 300, jTableCompareSoC);
+                  this.jSetTableColWidth(10, 50, jTableCompareSoC);
 
             this.jTableCompareSoC.repaint();
             this.jTableCompareSoC.updateUI();
@@ -806,8 +813,8 @@ public class DchubbubTransCheckerUI extends javax.swing.JFrame {
            DefaultTableModel jOutIPTableModel = new DefaultTableModel(vSIPDataSet, this.jDataSetIP.ColName);
            this.jTableIP.setModel(jOutIPTableModel);
            
-                this.jSetTableColWidth(0, 80, jTableIP);
-                this.jSetTableColWidth(1, 80, jTableIP); 
+                this.jSetTableColWidth(0, 50, jTableIP);
+                this.jSetTableColWidth(1, 60, jTableIP); 
                 this.jSetTableColWidth(2, 80, jTableIP);
                 this.jSetTableColWidth(3, 100, jTableIP);
                 this.jSetTableColWidth(4, 150, jTableIP);
@@ -816,6 +823,7 @@ public class DchubbubTransCheckerUI extends javax.swing.JFrame {
                 this.jSetTableColWidth(7, 80, jTableIP);
                 this.jSetTableColWidth(8, 300, jTableIP);
                 this.jSetTableColWidth(9, 300, jTableIP);
+                this.jSetTableColWidth(10, 50, jTableIP);
 
            this.jTableIP.repaint();
            this.jTableIP.updateUI();
@@ -828,8 +836,8 @@ public class DchubbubTransCheckerUI extends javax.swing.JFrame {
             DefaultTableModel jOutIPTableModel = new DefaultTableModel(vSIPDataSet, this.jDataSetIP.ColName);
             this.jTableIP.setModel(jOutIPTableModel);
            
-                this.jSetTableColWidth(0, 80, jTableIP);
-                this.jSetTableColWidth(1, 80, jTableIP); 
+                this.jSetTableColWidth(0, 50, jTableIP);
+                this.jSetTableColWidth(1, 60, jTableIP); 
                 this.jSetTableColWidth(2, 80, jTableIP);
                 this.jSetTableColWidth(3, 100, jTableIP);
                 this.jSetTableColWidth(4, 150, jTableIP);
@@ -838,6 +846,7 @@ public class DchubbubTransCheckerUI extends javax.swing.JFrame {
                 this.jSetTableColWidth(7, 80, jTableIP);
                 this.jSetTableColWidth(8, 300, jTableIP);
                 this.jSetTableColWidth(9, 300, jTableIP);
+                this.jSetTableColWidth(10, 50, jTableIP);
 
            this.jTableIP.repaint();
            this.jTableIP.updateUI();
@@ -879,8 +888,8 @@ public class DchubbubTransCheckerUI extends javax.swing.JFrame {
            DefaultTableModel jOutSoCTableModel = new DefaultTableModel(vSSoCDataSet, this.jDataSetSoC.ColName);
            this.jTableSoC.setModel(jOutSoCTableModel);
            
-                this.jSetTableColWidth(0, 80, jTableSoC);
-                this.jSetTableColWidth(1, 80, jTableSoC); 
+                this.jSetTableColWidth(0, 50, jTableSoC);
+                this.jSetTableColWidth(1, 60, jTableSoC); 
                 this.jSetTableColWidth(2, 80, jTableSoC);
                 this.jSetTableColWidth(3, 100, jTableSoC);
                 this.jSetTableColWidth(4, 150, jTableSoC);
@@ -889,6 +898,7 @@ public class DchubbubTransCheckerUI extends javax.swing.JFrame {
                 this.jSetTableColWidth(7, 80, jTableSoC);
                 this.jSetTableColWidth(8, 300, jTableSoC);
                 this.jSetTableColWidth(9, 300, jTableSoC);
+                this.jSetTableColWidth(10, 50, jTableSoC);
 
            this.jTableSoC.repaint();
            this.jTableSoC.updateUI();
@@ -901,8 +911,8 @@ public class DchubbubTransCheckerUI extends javax.swing.JFrame {
             DefaultTableModel jOutSoCTableModel = new DefaultTableModel(vSSoCDataSet, this.jDataSetSoC.ColName);
             this.jTableSoC.setModel(jOutSoCTableModel);
            
-                this.jSetTableColWidth(0, 80, jTableSoC);
-                this.jSetTableColWidth(1, 80, jTableSoC); 
+                this.jSetTableColWidth(0, 50, jTableSoC);
+                this.jSetTableColWidth(1, 60, jTableSoC); 
                 this.jSetTableColWidth(2, 80, jTableSoC);
                 this.jSetTableColWidth(3, 100, jTableSoC);
                 this.jSetTableColWidth(4, 150, jTableSoC);
@@ -911,6 +921,7 @@ public class DchubbubTransCheckerUI extends javax.swing.JFrame {
                 this.jSetTableColWidth(7, 80, jTableSoC);
                 this.jSetTableColWidth(8, 300, jTableSoC);
                 this.jSetTableColWidth(9, 300, jTableSoC);
+                this.jSetTableColWidth(10, 50, jTableSoC);
 
            this.jTableSoC.repaint();
            this.jTableSoC.updateUI();
