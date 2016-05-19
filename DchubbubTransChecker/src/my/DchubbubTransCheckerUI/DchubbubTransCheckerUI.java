@@ -256,6 +256,7 @@ public class DchubbubTransCheckerUI extends javax.swing.JFrame {
 
             }
         ));
+        jTableCompareSoC.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
         jTableCompareSoC.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jTableCompareSoCMouseClicked(evt);
@@ -271,6 +272,7 @@ public class DchubbubTransCheckerUI extends javax.swing.JFrame {
 
             }
         ));
+        jTableCompareIP.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
         jTableCompareIP.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jTableCompareIPMouseClicked(evt);
@@ -422,19 +424,21 @@ public class DchubbubTransCheckerUI extends javax.swing.JFrame {
                 String lineTxt = null;
                 while((lineTxt = bufferedReader.readLine()) != null){
                     String[] strArray = lineTxt.split(" ");
-                    if(strArray.length == 13){
+                    if(strArray.length == 15){
                         Vector jReqElement = new Vector();
-                        jReqElement.addElement(strArray[11]);//overtime
+                        jReqElement.addElement(strArray[13]);//overtime
                         jReqElement.addElement(strArray[1]); //FrameCount
                         jReqElement.addElement(strArray[6]); //UnitID 
                         jReqElement.addElement(strArray[0]); //ReqTime
                         jReqElement.addElement(strArray[2]); //ReqAddress
                         jReqElement.addElement("0x" + Integer.toHexString(Integer.parseInt(strArray[3]))); //ReqTag
                         jReqElement.addElement(strArray[4]); //RetTime
-                        jReqElement.addElement(strArray[10]); //DeltaTime
-                        jReqElement.addElement(strArray[9]); //Data1
-                        jReqElement.addElement(strArray[8]); //Data2
-                        jReqElement.addElement(strArray[12]); //Qos
+                        jReqElement.addElement(strArray[12]); //DeltaTime
+                        jReqElement.addElement(strArray[8]); //Data1
+                        jReqElement.addElement(strArray[9]); //Data2
+                        jReqElement.addElement(strArray[10]); //Data3
+                        jReqElement.addElement(strArray[11]); //Data4
+                        jReqElement.addElement(strArray[14]); //Qos
                         
                       
 
@@ -456,7 +460,9 @@ public class DchubbubTransCheckerUI extends javax.swing.JFrame {
                 this.jSetTableColWidth(7, 80, jTableIP);
                 this.jSetTableColWidth(8, 300, jTableIP);
                 this.jSetTableColWidth(9, 300, jTableIP);
-                this.jSetTableColWidth(10, 50, jTableIP);
+                this.jSetTableColWidth(10, 300, jTableIP);
+                this.jSetTableColWidth(11, 300, jTableIP);
+                this.jSetTableColWidth(12, 50, jTableIP);
 
                 this.jTableIP.repaint();
                 this.jTableIP.updateUI();
@@ -558,19 +564,21 @@ public class DchubbubTransCheckerUI extends javax.swing.JFrame {
                 String lineTxt = null;
                 while((lineTxt = bufferedReader.readLine()) != null){
                     String[] strArray = lineTxt.split(" ");
-                    if(strArray.length == 13){
+                    if(strArray.length == 15){
                         Vector jReqElement = new Vector();
-                        jReqElement.addElement(strArray[11]);
+                        jReqElement.addElement(strArray[13]);
                         jReqElement.addElement(strArray[1]); //FrameCount
                         jReqElement.addElement(strArray[6]); //UnitID 
                         jReqElement.addElement(strArray[0]); //ReqTime
                         jReqElement.addElement(strArray[2]); //ReqAddress
                         jReqElement.addElement("0x" + Integer.toHexString(Integer.parseInt(strArray[3]))); //ReqTag
                         jReqElement.addElement(strArray[4]); //RetTime
-                        jReqElement.addElement(strArray[10]); //DeltaTime
-                        jReqElement.addElement(strArray[9]); //Data1
-                        jReqElement.addElement(strArray[8]); //Data2
-                        jReqElement.addElement(strArray[12]); //Data2
+                        jReqElement.addElement(strArray[12]); //DeltaTime
+                        jReqElement.addElement(strArray[8]); //Data1
+                        jReqElement.addElement(strArray[9]); //Data2
+                        jReqElement.addElement(strArray[10]); //Data1
+                        jReqElement.addElement(strArray[11]); //Data2
+                        jReqElement.addElement(strArray[14]); //Data2
 
 
                         this.jDataSetSoC.DataSrc.addElement(jReqElement);
@@ -591,7 +599,9 @@ public class DchubbubTransCheckerUI extends javax.swing.JFrame {
                   this.jSetTableColWidth(7, 80, jTableSoC);
                   this.jSetTableColWidth(8, 300, jTableSoC);
                   this.jSetTableColWidth(9, 300, jTableSoC);
-                  this.jSetTableColWidth(10, 50, jTableSoC);
+                  this.jSetTableColWidth(10, 300, jTableSoC);
+                  this.jSetTableColWidth(11, 300, jTableSoC);
+                  this.jSetTableColWidth(12, 50, jTableSoC);
                  
 
 
@@ -666,14 +676,18 @@ public class DchubbubTransCheckerUI extends javax.swing.JFrame {
                 String vIPTag = (String) vIPElement.elementAt(5);
                 String vIPData1 = (String) vIPElement.elementAt(8);
                 String vIPData2 = (String) vIPElement.elementAt(9);
+                String vIPData3 = (String) vIPElement.elementAt(10);
+                String vIPData4 = (String) vIPElement.elementAt(11);
                 for (int j = 0; j < vSoCDataSet.size();){                    
                     Vector vSoCElement = (Vector) vSoCDataSet.elementAt(j);
                     String vSoCFrameCnt = (String) vSoCElement.elementAt(1);
                     String vSoCTag = (String) vSoCElement.elementAt(5);
                     String vSoCData1 = (String) vSoCElement.elementAt(8);
                     String vSoCData2 = (String) vSoCElement.elementAt(9);
+                    String vSoCData3 = (String) vSoCElement.elementAt(10);
+                    String vSoCData4 = (String) vSoCElement.elementAt(11);
                     
-                    if( vIPFrameCnt.equals(vSoCFrameCnt) && vIPTag.equals(vSoCTag) && vIPData1.equals(vSoCData1) && vIPData2.equals(vSoCData2)){                        
+                    if( vIPFrameCnt.equals(vSoCFrameCnt) && vIPTag.equals(vSoCTag) && vIPData1.equals(vSoCData1) && vIPData3.equals(vSoCData3)){                        
                         vSoCDataSet.remove(j);
                         bFound = true;
                         break;
@@ -704,7 +718,9 @@ public class DchubbubTransCheckerUI extends javax.swing.JFrame {
                   this.jSetTableColWidth(7, 80, jTableCompareIP);
                   this.jSetTableColWidth(8, 300, jTableCompareIP);
                   this.jSetTableColWidth(9, 300, jTableCompareIP);
-                  this.jSetTableColWidth(10, 50, jTableCompareIP);
+                  this.jSetTableColWidth(10, 300, jTableCompareIP);
+                  this.jSetTableColWidth(11, 300, jTableCompareIP);
+                  this.jSetTableColWidth(12, 50, jTableCompareIP);
             
 
             this.jTableCompareIP.repaint();
@@ -724,7 +740,9 @@ public class DchubbubTransCheckerUI extends javax.swing.JFrame {
                   this.jSetTableColWidth(7, 80, jTableCompareSoC);
                   this.jSetTableColWidth(8, 300, jTableCompareSoC);
                   this.jSetTableColWidth(9, 300, jTableCompareSoC);
-                  this.jSetTableColWidth(10, 50, jTableCompareSoC);
+                  this.jSetTableColWidth(10, 300, jTableCompareSoC);
+                  this.jSetTableColWidth(11, 300, jTableCompareSoC);
+                  this.jSetTableColWidth(12, 50, jTableCompareSoC);
 
             this.jTableCompareSoC.repaint();
             this.jTableCompareSoC.updateUI();
@@ -823,7 +841,9 @@ public class DchubbubTransCheckerUI extends javax.swing.JFrame {
                 this.jSetTableColWidth(7, 80, jTableIP);
                 this.jSetTableColWidth(8, 300, jTableIP);
                 this.jSetTableColWidth(9, 300, jTableIP);
-                this.jSetTableColWidth(10, 50, jTableIP);
+                this.jSetTableColWidth(10, 300, jTableIP);
+                this.jSetTableColWidth(11, 300, jTableIP);
+                this.jSetTableColWidth(12, 50, jTableIP);
 
            this.jTableIP.repaint();
            this.jTableIP.updateUI();
@@ -846,7 +866,9 @@ public class DchubbubTransCheckerUI extends javax.swing.JFrame {
                 this.jSetTableColWidth(7, 80, jTableIP);
                 this.jSetTableColWidth(8, 300, jTableIP);
                 this.jSetTableColWidth(9, 300, jTableIP);
-                this.jSetTableColWidth(10, 50, jTableIP);
+                this.jSetTableColWidth(10, 300, jTableIP);
+                this.jSetTableColWidth(11, 300, jTableIP);
+                this.jSetTableColWidth(12, 50, jTableIP);
 
            this.jTableIP.repaint();
            this.jTableIP.updateUI();
