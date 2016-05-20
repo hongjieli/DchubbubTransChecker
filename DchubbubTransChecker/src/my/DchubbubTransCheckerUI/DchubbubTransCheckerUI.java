@@ -64,6 +64,9 @@ public class DchubbubTransCheckerUI extends javax.swing.JFrame {
         jScrollPaneIP = new javax.swing.JScrollPane();
         jTableIP = new javax.swing.JTable();
         bIPOvertimeFilter = new javax.swing.JButton();
+        jMaxDelayTextField1 = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         jPanelSoC = new javax.swing.JPanel();
         jLabelOutDirSoC = new javax.swing.JLabel();
         jLabelScriptSoC = new javax.swing.JLabel();
@@ -73,6 +76,9 @@ public class DchubbubTransCheckerUI extends javax.swing.JFrame {
         jScrollPaneSoC = new javax.swing.JScrollPane();
         jTableSoC = new javax.swing.JTable();
         bSoCOvertimeFilter = new javax.swing.JButton();
+        jMaxDelayTextField = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        labelps = new javax.swing.JLabel();
         jPanelCompare = new javax.swing.JPanel();
         jScrollPaneCompareSoC = new javax.swing.JScrollPane();
         jTableCompareSoC = new javax.swing.JTable();
@@ -128,6 +134,10 @@ public class DchubbubTransCheckerUI extends javax.swing.JFrame {
             }
         });
 
+        jLabel2.setText("Set Max Delay");
+
+        jLabel3.setText("ps");
+
         javax.swing.GroupLayout jPanelIPLayout = new javax.swing.GroupLayout(jPanelIP);
         jPanelIP.setLayout(jPanelIPLayout);
         jPanelIPLayout.setHorizontalGroup(
@@ -141,13 +151,22 @@ public class DchubbubTransCheckerUI extends javax.swing.JFrame {
                             .addComponent(jLabelOutDirIP)
                             .addComponent(jLabelScriptIP)
                             .addComponent(StartIPAnalyze))
-                        .addGap(18, 18, 18)
                         .addGroup(jPanelIPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanelIPLayout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanelIPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jTextFieldOutDirIP, javax.swing.GroupLayout.DEFAULT_SIZE, 1085, Short.MAX_VALUE)
+                                    .addComponent(jTextFieldScriptIP)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelIPLayout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jMaxDelayTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(3, 3, 3)
+                                .addComponent(jLabel3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(bIPOvertimeFilter)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addComponent(jTextFieldOutDirIP, javax.swing.GroupLayout.DEFAULT_SIZE, 1085, Short.MAX_VALUE)
-                            .addComponent(jTextFieldScriptIP))))
+                                .addGap(63, 63, 63)))))
                 .addContainerGap())
         );
         jPanelIPLayout.setVerticalGroup(
@@ -164,7 +183,10 @@ public class DchubbubTransCheckerUI extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanelIPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(StartIPAnalyze)
-                    .addComponent(bIPOvertimeFilter))
+                    .addComponent(bIPOvertimeFilter)
+                    .addComponent(jMaxDelayTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel3))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPaneIP, javax.swing.GroupLayout.DEFAULT_SIZE, 422, Short.MAX_VALUE)
                 .addContainerGap())
@@ -203,6 +225,10 @@ public class DchubbubTransCheckerUI extends javax.swing.JFrame {
             }
         });
 
+        jLabel4.setText("Set Max Delay");
+
+        labelps.setText("ps");
+
         javax.swing.GroupLayout jPanelSoCLayout = new javax.swing.GroupLayout(jPanelSoC);
         jPanelSoC.setLayout(jPanelSoCLayout);
         jPanelSoCLayout.setHorizontalGroup(
@@ -217,13 +243,22 @@ public class DchubbubTransCheckerUI extends javax.swing.JFrame {
                                 .addComponent(jLabelOutDirSoC, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jLabelScriptSoC, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addComponent(StartSoCAnalyze))
-                        .addGap(18, 18, 18)
                         .addGroup(jPanelSoCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanelSoCLayout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanelSoCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jTextFieldOutDirSoC, javax.swing.GroupLayout.DEFAULT_SIZE, 1070, Short.MAX_VALUE)
+                                    .addComponent(jTextFieldScriptSoC, javax.swing.GroupLayout.DEFAULT_SIZE, 1070, Short.MAX_VALUE)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelSoCLayout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel4)
+                                .addGap(18, 18, 18)
+                                .addComponent(jMaxDelayTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(labelps, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(bSoCOvertimeFilter)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addComponent(jTextFieldOutDirSoC, javax.swing.GroupLayout.DEFAULT_SIZE, 1070, Short.MAX_VALUE)
-                            .addComponent(jTextFieldScriptSoC, javax.swing.GroupLayout.DEFAULT_SIZE, 1070, Short.MAX_VALUE))))
+                                .addGap(48, 48, 48)))))
                 .addContainerGap())
         );
         jPanelSoCLayout.setVerticalGroup(
@@ -240,9 +275,12 @@ public class DchubbubTransCheckerUI extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanelSoCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(StartSoCAnalyze)
-                    .addComponent(bSoCOvertimeFilter))
+                    .addComponent(bSoCOvertimeFilter)
+                    .addComponent(jMaxDelayTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4)
+                    .addComponent(labelps))
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPaneSoC, javax.swing.GroupLayout.DEFAULT_SIZE, 428, Short.MAX_VALUE)
+                .addComponent(jScrollPaneSoC, javax.swing.GroupLayout.DEFAULT_SIZE, 421, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -358,6 +396,7 @@ public class DchubbubTransCheckerUI extends javax.swing.JFrame {
         System.out.println("IP GO button click.");
         String jOutputDirText = jTextFieldOutDirIP.getText();
         String jScriptDirText = jTextFieldScriptIP.getText();
+        String jMaxDelayText  = jMaxDelayTextField1.getText();
 
         if (jOutputDirText.isEmpty() || jScriptDirText.isEmpty()){
             JOptionPane.showMessageDialog(null, "Both two text field need to be filled in", "Error", JOptionPane.ERROR_MESSAGE);
@@ -394,7 +433,7 @@ public class DchubbubTransCheckerUI extends javax.swing.JFrame {
 
         String lineToRead;
         try {
-            String jCmd = "perl " + jFileScript + " -dir " + jOutputDirText;
+            String jCmd = "perl " + jFileScript + " -dir " + jOutputDirText + " -md " + jMaxDelayText;
             System.out.println(jCmd);
             Process jProc = Runtime.getRuntime().exec(jCmd);
             InputStream inputStream = jProc.getInputStream();
@@ -497,8 +536,9 @@ public class DchubbubTransCheckerUI extends javax.swing.JFrame {
         this.jTableSoC.updateUI();
 
         System.out.println("SoC GO button click.");
-        String jOutputDirText = jTextFieldOutDirSoC.getText();
-        String jScriptDirText = jTextFieldScriptSoC.getText();
+        String jOutputDirText   = jTextFieldOutDirSoC.getText();
+        String jScriptDirText   = jTextFieldScriptSoC.getText();
+        String jMaxDelaySoCText = jMaxDelayTextField.getText();
 
         if (jOutputDirText.isEmpty() || jScriptDirText.isEmpty()){
             JOptionPane.showMessageDialog(null, "Both two text field need to be filled in", "Error", JOptionPane.ERROR_MESSAGE);
@@ -535,7 +575,7 @@ public class DchubbubTransCheckerUI extends javax.swing.JFrame {
 
         String lineToRead;
         try {
-            String jCmd = "perl " + jFileScript + " -dir " + jOutputDirText;
+            String jCmd = "perl " + jFileScript + " -dir " + jOutputDirText + " -md " + jMaxDelaySoCText;
             System.out.println(jCmd);
             Process jProc = Runtime.getRuntime().exec(jCmd);
             InputStream inputStream = jProc.getInputStream();
@@ -1002,10 +1042,15 @@ public class DchubbubTransCheckerUI extends javax.swing.JFrame {
     private javax.swing.JButton bIPOvertimeFilter;
     private javax.swing.JButton bSoCOvertimeFilter;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabelOutDirIP;
     private javax.swing.JLabel jLabelOutDirSoC;
     private javax.swing.JLabel jLabelScriptIP;
     private javax.swing.JLabel jLabelScriptSoC;
+    private javax.swing.JTextField jMaxDelayTextField;
+    private javax.swing.JTextField jMaxDelayTextField1;
     private javax.swing.JPanel jPanelCompare;
     private javax.swing.JPanel jPanelIP;
     private javax.swing.JPanel jPanelSoC;
@@ -1023,6 +1068,7 @@ public class DchubbubTransCheckerUI extends javax.swing.JFrame {
     private javax.swing.JTextField jTextFieldScriptIP;
     private javax.swing.JTextField jTextFieldScriptSoC;
     private javax.swing.JTextField jTextFrameToCompare;
+    private javax.swing.JLabel labelps;
     // End of variables declaration//GEN-END:variables
     private DataSet jDataSetIP;
     private DataSet jDataSetSoC;

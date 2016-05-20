@@ -66,14 +66,25 @@
                                   <Component id="jLabelScriptIP" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="StartIPAnalyze" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" attributes="0">
-                                      <Component id="bIPOvertimeFilter" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="jTextFieldOutDirIP" pref="1085" max="32767" attributes="0"/>
+                                          <Component id="jTextFieldScriptIP" max="32767" attributes="0"/>
+                                      </Group>
                                   </Group>
-                                  <Component id="jTextFieldOutDirIP" pref="1085" max="32767" attributes="0"/>
-                                  <Component id="jTextFieldScriptIP" max="32767" attributes="0"/>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <EmptySpace max="32767" attributes="0"/>
+                                      <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="jMaxDelayTextField1" min="-2" pref="72" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
+                                      <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="bIPOvertimeFilter" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
                           </Group>
                       </Group>
@@ -98,6 +109,9 @@
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="StartIPAnalyze" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="bIPOvertimeFilter" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jMaxDelayTextField1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="jScrollPaneIP" pref="422" max="32767" attributes="0"/>
@@ -172,6 +186,18 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bIPOvertimeFilterActionPerformed"/>
               </Events>
             </Component>
+            <Component class="javax.swing.JTextField" name="jMaxDelayTextField1">
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel2">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Set Max Delay"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel3">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="ps"/>
+              </Properties>
+            </Component>
           </SubComponents>
         </Container>
         <Container class="javax.swing.JPanel" name="jPanelSoC">
@@ -198,14 +224,25 @@
                                   </Group>
                                   <Component id="StartSoCAnalyze" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" attributes="0">
-                                      <Component id="bSoCOvertimeFilter" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="jTextFieldOutDirSoC" pref="1070" max="32767" attributes="0"/>
+                                          <Component id="jTextFieldScriptSoC" pref="1070" max="32767" attributes="0"/>
+                                      </Group>
                                   </Group>
-                                  <Component id="jTextFieldOutDirSoC" pref="1070" max="32767" attributes="0"/>
-                                  <Component id="jTextFieldScriptSoC" pref="1070" max="32767" attributes="0"/>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <EmptySpace max="32767" attributes="0"/>
+                                      <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="jMaxDelayTextField" min="-2" pref="59" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="labelps" min="-2" pref="24" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="bSoCOvertimeFilter" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
                           </Group>
                       </Group>
@@ -230,9 +267,12 @@
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="StartSoCAnalyze" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="bSoCOvertimeFilter" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jMaxDelayTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="labelps" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jScrollPaneSoC" pref="428" max="32767" attributes="0"/>
+                      <Component id="jScrollPaneSoC" pref="421" max="32767" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -294,6 +334,18 @@
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bSoCOvertimeFilterActionPerformed"/>
               </Events>
+            </Component>
+            <Component class="javax.swing.JTextField" name="jMaxDelayTextField">
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel4">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Set Max Delay"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="labelps">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="ps"/>
+              </Properties>
             </Component>
           </SubComponents>
         </Container>
