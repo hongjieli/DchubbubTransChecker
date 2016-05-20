@@ -136,7 +136,7 @@ public class DchubbubTransCheckerUI extends javax.swing.JFrame {
 
         jLabel2.setText("Set Max Delay");
 
-        jLabel3.setText("ps");
+        jLabel3.setText("ns");
 
         javax.swing.GroupLayout jPanelIPLayout = new javax.swing.GroupLayout(jPanelIP);
         jPanelIP.setLayout(jPanelIPLayout);
@@ -227,7 +227,7 @@ public class DchubbubTransCheckerUI extends javax.swing.JFrame {
 
         jLabel4.setText("Set Max Delay");
 
-        labelps.setText("ps");
+        labelps.setText("ns");
 
         javax.swing.GroupLayout jPanelSoCLayout = new javax.swing.GroupLayout(jPanelSoC);
         jPanelSoC.setLayout(jPanelSoCLayout);
@@ -727,7 +727,8 @@ public class DchubbubTransCheckerUI extends javax.swing.JFrame {
                     String vSoCData3 = (String) vSoCElement.elementAt(10);
                     String vSoCData4 = (String) vSoCElement.elementAt(11);
                     
-                    if( vIPFrameCnt.equals(vSoCFrameCnt) && vIPTag.equals(vSoCTag) && vIPData1.equals(vSoCData1) && vIPData3.equals(vSoCData3)){                        
+                    if( vIPFrameCnt.equals(vSoCFrameCnt) && vIPTag.equals(vSoCTag) && vIPData1.equals(vSoCData1) 
+                            && vIPData2.equals(vSoCData2)&& vIPData3.equals(vSoCData3)&& vIPData4.equals(vSoCData4)){                        
                         vSoCDataSet.remove(j);
                         bFound = true;
                         break;

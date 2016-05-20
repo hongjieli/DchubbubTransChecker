@@ -195,7 +195,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel3">
               <Properties>
-                <Property name="text" type="java.lang.String" value="ps"/>
+                <Property name="text" type="java.lang.String" value="ns"/>
               </Properties>
             </Component>
           </SubComponents>
@@ -344,7 +344,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="labelps">
               <Properties>
-                <Property name="text" type="java.lang.String" value="ps"/>
+                <Property name="text" type="java.lang.String" value="ns"/>
               </Properties>
             </Component>
           </SubComponents>
